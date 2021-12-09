@@ -31,20 +31,20 @@ namespace MovieLensDB
                         var movies = db.Movies.Where(c => c.Title == searchTerm).ToList();
                         if (movies.Count() > 0)
                         {
-                            System.Console.WriteLine("{0, -10}{1, -30}{2, 15}", "ID", "Movie Title", "Release Date");
+                            System.Console.WriteLine("{0, -10}{1, -30}{2, 15}", "Movie ID", "Movie Title", "Release Date");
                             foreach (var movie in movies)
                             {
-                                // var movieGenres = db.MovieGenres.Where(c => c.Movie == movie).ToList();
-                                
-                                // var genreNames = new List<string>();
-                                // foreach (var item in movies)
-                                // {
-                                //     var f = item.MovieGenres.ToList();
-                                //     foreach (var q in f)
-                                //     {
-                                //         genreNames.Add(q.Genre.Name);
-                                //     }
-                                // }
+                                var movieGenres = movie.MovieGenres.ToList();
+
+                                var genreNames = new List<string>();
+                                foreach (var item in movies)
+                                {
+                                    var f = item.MovieGenres.ToList();
+                                    foreach (var q in f)
+                                    {
+                                        genreNames.Add(q.Genre.Name);
+                                    }
+                                }
                                 System.Console.WriteLine("{0, -10}{1, -30}{2, 15}", movie.Id, movie.Title, movie.ReleaseDate);
                             }
                         }
