@@ -75,11 +75,11 @@
             },
             "NLog.Config": {
               "target": "Package",
-              "version": "[4.7.11, )"
+              "version": "[4.7.13, )"
             },
             "NLog.Web.AspNetCore": {
               "target": "Package",
-              "version": "[4.9.3, )"
+              "version": "[4.14.0, )"
             },
             "Newtonsoft.Json": {
               "target": "Package",

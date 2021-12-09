@@ -1,0 +1,54 @@
+2021-12-09 13:01:40.5286|INFO|MovieLensDB.Program|Search
+2021-12-09 13:01:57.1112|INFO|MovieLensDB.Program|Add movie
+2021-12-09 13:03:28.3429|INFO|MovieLensDB.Program|Add movie
+2021-12-09 13:05:27.4043|INFO|MovieLensDB.Program|Add movie
+2021-12-09 13:23:33.3737|INFO|MovieLensDB.Program|View all
+2021-12-09 13:23:58.2900|INFO|MovieLensDB.Program|Delete
+2021-12-09 14:06:21.6978|INFO|MovieLensDB.Program|Delete
+2021-12-09 14:09:14.0010|INFO|MovieLensDB.Program|Delete
+2021-12-09 14:10:09.8449|INFO|MovieLensDB.Program|View all
+2021-12-09 14:32:40.0771|INFO|MovieLensDB.Program|Search
+2021-12-09 14:55:32.3772|INFO|MovieLensDB.Program|Search
+2021-12-09 14:57:04.2035|INFO|MovieLensDB.Program|View all
+2021-12-09 15:01:27.1361|INFO|MovieLensDB.Program|View all
+2021-12-09 15:02:51.6073|INFO|MovieLensDB.Program|View all
+2021-12-09 15:03:50.8121|INFO|MovieLensDB.Program|View all
+2021-12-09 15:04:22.2363|INFO|MovieLensDB.Program|View all
+2021-12-09 15:04:34.3199|INFO|MovieLensDB.Program|Update
+2021-12-09 15:07:43.6502|INFO|MovieLensDB.Program|Update
+2021-12-09 15:07:48.0220|ERROR|MovieLensDB.Program|Invalid movie ID
+2021-12-09 15:11:42.5802|INFO|MovieLensDB.Program|Update
+2021-12-09 15:11:46.1565|ERROR|MovieLensDB.Program|Invalid movie ID
+2021-12-09 15:12:37.6549|INFO|MovieLensDB.Program|Search
+2021-12-09 15:14:36.8567|INFO|MovieLensDB.Program|Search
+2021-12-09 15:14:52.3934|INFO|MovieLensDB.Program|View all
+2021-12-09 15:15:12.0791|INFO|MovieLensDB.Program|Add movie
+2021-12-09 15:18:19.0061|INFO|MovieLensDB.Program|Search
+2021-12-09 15:18:32.8776|INFO|MovieLensDB.Program|View all
+2021-12-09 15:18:48.7152|INFO|MovieLensDB.Program|Add movie
+2021-12-09 15:18:56.3811|INFO|MovieLensDB.Program|Search
+2021-12-09 15:19:10.2314|INFO|MovieLensDB.Program|Update
+2021-12-09 15:19:20.1027|INFO|MovieLensDB.Program|Search
+2021-12-09 15:19:29.0883|INFO|MovieLensDB.Program|Delete
+2021-12-09 15:19:38.6672|INFO|MovieLensDB.Program|Search
+2021-12-09 15:19:45.0654|INFO|MovieLensDB.Program|Add user
+2021-12-09 15:22:28.8055|INFO|MovieLensDB.Program|Search
+2021-12-09 15:23:18.0864|INFO|MovieLensDB.Program|Search
+2021-12-09 15:26:26.0539|INFO|MovieLensDB.Program|Search
+2021-12-09 15:26:36.3337|INFO|MovieLensDB.Program|View all
+2021-12-09 15:26:47.5178|INFO|MovieLensDB.Program|Add movie
+2021-12-09 15:26:51.2451|INFO|MovieLensDB.Program|Search
+2021-12-09 15:27:03.1779|INFO|MovieLensDB.Program|Update
+2021-12-09 15:27:13.7322|INFO|MovieLensDB.Program|Search
+2021-12-09 15:27:23.7113|INFO|MovieLensDB.Program|Delete
+2021-12-09 15:27:32.2920|INFO|MovieLensDB.Program|Search
+2021-12-09 15:27:40.7867|INFO|MovieLensDB.Program|Add user
+2021-12-09 15:30:15.5134|INFO|MovieLensDB.Program|Search
+2021-12-09 15:30:26.8645|INFO|MovieLensDB.Program|View all
+2021-12-09 15:30:35.7392|INFO|MovieLensDB.Program|Add movie
+2021-12-09 15:30:42.9693|INFO|MovieLensDB.Program|Search
+2021-12-09 15:30:51.3818|INFO|MovieLensDB.Program|Update
+2021-12-09 15:31:00.8147|INFO|MovieLensDB.Program|Search
+2021-12-09 15:31:11.2182|INFO|MovieLensDB.Program|Delete
+2021-12-09 15:31:19.9560|INFO|MovieLensDB.Program|Search
+2021-12-09 15:31:27.1301|INFO|MovieLensDB.Program|Add user
