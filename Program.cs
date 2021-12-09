@@ -14,12 +14,12 @@ namespace MovieLensDB
             while (!exit)
             {
 
-
                 System.Console.WriteLine("1. Search movies");
                 System.Console.WriteLine("2. Add movie");
                 System.Console.WriteLine("3. Update movie");
                 System.Console.WriteLine("4. Delete movie");
-                System.Console.WriteLine("5. Exit");
+                System.Console.WriteLine("5. Add user");
+                System.Console.WriteLine("0. Exit");
                 var choice = Console.ReadLine();
                 // search movies
                 if (choice == "1")
@@ -28,25 +28,29 @@ namespace MovieLensDB
                     var searchTerm = Console.ReadLine();
                     using (var db = new MovieContext())
                     {
-                        var movies = db.Movies.Where(c => c.Title == searchTerm).Take(1).ToList();
+                        var movies = db.Movies.Where(c => c.Title == searchTerm).ToList();
                         if (movies.Count() > 0)
                         {
-                            System.Console.WriteLine("{0, 6}{1, 30}{2, 15}{3}", "Movie ID", "Movie Title", "Release Date", "Genres");
+                            System.Console.WriteLine("{0, -10}{1, -30}{2, 15}", "ID", "Movie Title", "Release Date");
                             foreach (var movie in movies)
                             {
-                                var movieGenres = db.MovieGenres.Where(c => c.Movie == movie).ToList();
-                                var genres = new List<Genre>();
-                                foreach (var genre in movieGenres)
-                                {
-                                    genres.Add(genre.Genre);
-                                }
-                                var genreNames = new List<string>();
-                                foreach (var item in genres)
-                                {
-                                    genreNames.Add(item.Name);
-                                }
-                                System.Console.WriteLine("{0, 6}{1, 30}{2, 15}", movie.Id, movie.Title, movie.ReleaseDate, String.Join(", ", genreNames));
+                                // var movieGenres = db.MovieGenres.Where(c => c.Movie == movie).ToList();
+                                
+                                // var genreNames = new List<string>();
+                                // foreach (var item in movies)
+                                // {
+                                //     var f = item.MovieGenres.ToList();
+                                //     foreach (var q in f)
+                                //     {
+                                //         genreNames.Add(q.Genre.Name);
+                                //     }
+                                // }
+                                System.Console.WriteLine("{0, -10}{1, -30}{2, 15}", movie.Id, movie.Title, movie.ReleaseDate);
                             }
+                        }
+                        else
+                        {
+                            System.Console.WriteLine("No matches found.");
                         }
                     }
                 }
@@ -60,7 +64,7 @@ namespace MovieLensDB
                         newM.Title = Console.ReadLine();
 
 
-                        var movieTitles = db.Movies.Select(m => m.Title);
+                        var movieTitles = db.Movies.Select(m => m.Title).ToList();
                         var exists = movieTitles.ToString().ToLower().Contains(newM.Title.ToLower());
                         if (exists == true)
                         {
@@ -124,8 +128,106 @@ namespace MovieLensDB
                         }
                     }
                 }
-                // leave
+                // add user w/occupation
                 else if (choice == "5")
+                {
+                    using (var db = new MovieContext())
+                    {
+                        var newUser = new User();
+
+                        // add age
+
+                        System.Console.WriteLine("Enter age:");
+
+                        var newAge = Convert.ToInt16(Console.ReadLine());
+                        newUser.Age = newAge;
+
+                        // add gender
+
+                        var genderBool = false;
+
+                        while (!genderBool)
+                        {
+                            System.Console.WriteLine("Enter gender (M/F):");
+
+                            var newGender = Console.ReadLine().ToUpper();
+
+                            if (newGender == "M" || newGender == "F")
+                            {
+                                newUser.Gender = newGender;
+                                genderBool = true;
+                            }
+                            else
+                            {
+                                System.Console.WriteLine("Try again");
+                            }
+                        }
+
+                        // add zip
+
+                        var zipBool = false;
+
+                        while (!zipBool)
+                        {
+                            System.Console.WriteLine("Enter 5-digit zip code:");
+
+                            var newZip = Console.ReadLine().Trim();
+
+                            if (newZip.Length == 5)
+                            {
+                                newUser.ZipCode = newZip;
+                                zipBool = true;
+                            }
+                            else
+                            {
+                                System.Console.WriteLine("Try again");
+                            }
+                        }
+
+                        // add occupation
+
+                        var occupations = db.Occupations.ToList();
+                        var newOccBool = false;
+
+                        while (!newOccBool)
+                        {
+                            System.Console.WriteLine("Choose occupation:");
+
+                            foreach (var occ in occupations)
+                            {
+                                System.Console.WriteLine($"{occ.Id}. {occ.Name}");
+                            }
+
+                            var newOcc = Convert.ToInt16(Console.ReadLine());
+
+                            foreach (var occ in occupations)
+                            {
+                                if (newOcc == occ.Id)
+                                {
+                                    newUser.Occupation = occ;
+
+                                    newOccBool = true;
+                                    break;
+                                }
+                            }
+                            if (!newOccBool)
+                            {
+                                System.Console.WriteLine("Try again");
+                            }
+                            else
+                            {
+                                System.Console.WriteLine($"User age: {newUser.Age}");
+                                System.Console.WriteLine($"User gender: {newUser.Gender}");
+                                System.Console.WriteLine($"User zipcode: {newUser.ZipCode}");
+                                System.Console.WriteLine($"User occupation: {newUser.Occupation.Name}");
+                                db.Add(newUser);
+                                db.SaveChanges();
+                            }
+                        }
+                    }
+                }
+                // leave
+                else if (choice == "0")
                 {
                     exit = true;
                 }

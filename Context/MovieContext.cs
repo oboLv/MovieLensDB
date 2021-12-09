@@ -16,7 +16,7 @@ namespace MovieLensDB.Context
         public DbSet<UserMovie> UserMovies {get;set;}
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"");
+            optionsBuilder.UseSqlServer(@"Server=bitsql.wctc.edu;Database=MovieLensDB_12090_cbeilfuss1;User ID=cbeilfuss1;Password=000451249;");
         }
     }
 }
